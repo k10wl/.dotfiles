@@ -1,11 +1,6 @@
 #!/bin/sh
 
-echo "Updating git submodules..."
 git submodule update --init --recursive
-echo "Successfully updated git submodules"
-
-echo "Installing .dotfiles"
-echo "---"
 
 install="install.sh"
 
@@ -17,14 +12,10 @@ do
     fi
     if [ -f "$folder/$install" ];
     then
-        echo "Running install script in $folder"
-        (cd "$folder" && bash "./$install")
-        echo "Finished installing $folder"
+        (cd "$folder" && bash "./$install") ||
+        echo "Error in $folder$install"
         continue
     fi
 
-    echo "No install script found in $folder, continuing..."
+    echo "No $install in $folder, skipping"
 done
-
-echo "---"
-echo "Successfully installed .dotfiles"
