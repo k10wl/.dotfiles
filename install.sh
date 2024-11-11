@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo "Updating git submodules..."
+git submodule update --init --recursive
+echo "Successfully updated git submodules"
+
 echo "Installing .dotfiles"
 echo "---"
 
