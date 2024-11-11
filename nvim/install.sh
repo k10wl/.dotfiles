@@ -2,7 +2,8 @@
 
 source ../backup.sh
 
-nvim_path="$HOME/.config/nvim" 
+config_path="$HOME/.config" 
+nvim_path="$config_path/nvim" 
 symlink_dest="$(pwd)/nvim-lite"
 
 symlink_backup_name="existing-nvim-symlink"
@@ -23,5 +24,6 @@ then
     rm -rf "$nvim_path"
 fi
 
+mkdir -p "$config_path"
 echo "creating link"
 ln -s "$symlink_dest" "$nvim_path"
