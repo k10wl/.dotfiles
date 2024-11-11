@@ -1,7 +1,10 @@
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
-export GOBIN=$GOPATH/bin
-export PATH="$PATH:$GOROOT:$GOBIN"
+export GOBIN=$GOROOT/bin
+export PATH="$PATH:$GOPATH:$GOROOT:$GOBIN"
+
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ZSH_THEME="robbyrussell"
@@ -12,3 +15,5 @@ source <(fzf --zsh)
 
 source <(zoxide init zsh)
 alias cd=z
+
+source <(hermes completion zsh)
