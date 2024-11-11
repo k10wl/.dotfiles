@@ -2,10 +2,12 @@
 
 source ../backup.sh
 
-if [ -f "$HOME/.tmux.conf" ];
+dest="$HOME/.tmux.conf" 
+
+if [ -f $dest ] && [ $(file_differs "$dest" "./.tmux.conf") = 1 ];
 then
     echo ".tmux.conf already exists, creating backup"
-    backup_existing_dotfile "$HOME/.tmux.conf" 
+    backup_existing_dotfile $dest
 fi
 
 cp ".tmux.conf" "$HOME"

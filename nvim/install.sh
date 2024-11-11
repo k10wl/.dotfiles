@@ -10,6 +10,9 @@ symlink_backup_name="existing-nvim-symlink"
 
 if [ -L "$nvim_path" ];
 then
+    if [ $(readlink $nvim_path) = $symlink_dest ]; then
+        exit
+    fi
     echo "nvim symlink already exists, creating nvim symlink destination backup"
     ls -l "$nvim_path" >> "$symlink_backup_name"
     backup_existing_dotfile "$symlink_backup_name"
@@ -25,5 +28,5 @@ then
 fi
 
 mkdir -p "$config_path"
-echo "creating link"
+echo "creating nvim link"
 ln -s "$symlink_dest" "$nvim_path"
