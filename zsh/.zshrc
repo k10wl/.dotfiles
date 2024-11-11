@@ -1,8 +1,3 @@
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/go
-export GOBIN=$GOROOT/bin
-export PATH="$PATH:$GOPATH:$GOROOT:$GOBIN"
-
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
