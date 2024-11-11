@@ -12,8 +12,5 @@ export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 source <(fzf --zsh)
-
 source <(zoxide init zsh)
-alias cd=z
-
 source <(hermes completion zsh)
