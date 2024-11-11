@@ -1,3 +1,4 @@
 [submodule "nvim/nvim-lite"]
 	path = nvim/nvim-lite
-	url = https://github.com/k10wl/nvim-lite
+	url = https://github.com/k10wl/nvim-lite.git
+	branch = main
