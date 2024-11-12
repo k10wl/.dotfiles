@@ -2,12 +2,11 @@
 
 source ../backup.sh
 
-dest="$HOME/.zshrc" 
+dest="$HOME/.zshrc"
 
-if [ -f $dest ] && [ $(file_differs "$dest" "./.zshrc") = 1 ];
-then
+if [ -f $dest ] && [ $(file_differs "$dest" "./.zshrc") = 1 ]; then
     echo ".zshrc already exists, creating backup"
-    backup_existing_dotfile "$HOME/.zshrc" 
+    backup_existing_dotfile "$HOME/.zshrc"
 fi
 
 cp ".zshrc" "$HOME"

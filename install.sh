@@ -4,16 +4,14 @@ git submodule update --init --recursive --remote
 
 install="install.sh"
 
-for folder in $(ls -d */)
-do
-    if [ "$folder" == "backups/" ];
-    then
+for folder in $(ls -d */); do
+    if [ "$folder" == "backups/" ]; then
         continue
     fi
-    if [ -f "$folder/$install" ];
-    then
+
+    if [ -f "$folder/$install" ]; then
         (cd "$folder" && bash "./$install") ||
-        echo "Error in $folder$install"
+            echo "Error in $folder$install"
         continue
     fi
 

@@ -7,7 +7,7 @@ backup_existing_dotfile() {
     cp -r $1 $_dotfiles_backup_folder
 }
 
-file_differs () {
+file_differs() {
     if [ "$(diff $1 $2)" = '' ]; then
         echo "0"
     else
