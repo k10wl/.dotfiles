@@ -1,5 +1,8 @@
 #!/bin/sh
 
+source ./backup.sh
+export backup_id=$(create_backup_id)
+
 git submodule update --init --recursive --remote
 
 install="install.sh"
